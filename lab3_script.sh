@@ -19,9 +19,12 @@ echo "Problem 3"
 echo "Number of emails: "
 egrep -c '.+\@.+\..+' $filename
 echo "Phone numbers with 303"
+#Same format as the regular phone number regex command but the first three numbers are restricted to 303
 grep -o '303\-[0-9]\{3\}\-[0-9]\{4\}' $filename
 echo "Sending geocities emails to a file"
+#Same as general email regex but restricts domain to just @geocities.com
 egrep '.+\@geocities\.com' $filename >> email_results.txt
+#Can just use regular terminal commands, so nothing special here
 git add email_results.txt
 git commit -m "emails"
 
